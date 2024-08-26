@@ -1,4 +1,4 @@
-#shell Script Learning
+#!/bin/bash
 
 
 echo "hello World"
