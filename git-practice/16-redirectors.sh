@@ -3,7 +3,7 @@
 
 LOGS_FOLDER="/var/logs/shell-scripts"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-TIMESTSAMP=$(data +Y=%m-%d-%H=%M-%S)
+TIMESTSAMP=$(date +Y=%m-%d-%H=%M-%S)
 LOG_FILE="$LOGS_FOLDERS/$SCRIPT_NAME-$TIMESTAMP.log"
 
 mkdir -p $LOGS_FOLDER
