@@ -26,7 +26,7 @@ then
     USAGE
 fi
 
-echo "Script started excecuting at: $(date)"
+echo "Script started excecuting at: $(date)" | tee -a $LOG_FILE
 
 
 VALIDATE(){
@@ -35,7 +35,7 @@ VALIDATE(){
     then echo -e "$2 is ..... $R Failed $N" | tee -a $LOG_FILE
          exit 1
     else
-        echo -e "$2 is .... $G succcess $N"| tee -a $LOG_FILE
+        echo -e "$2 is .... $G succcess $N" | tee -a $LOG_FILE
     fi         
 }
 
