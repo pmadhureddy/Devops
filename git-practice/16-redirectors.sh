@@ -1,10 +1,10 @@
 #!/bin/bash
 
 
-LOGS_FOLDER = "/var/logs/shell-scripts"
+LOGS_FOLDER="/var/logs/shell-scripts"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-TIMESTSAMP = $(data +Y=%m-%d-%H=%M-%S)
-LOG_FILE = "$LOGS_FOLDERS/$SCRIPT_NAME-$TIMESTAMP.log"
+TIMESTSAMP=$(data +Y=%m-%d-%H=%M-%S)
+LOG_FILE="$LOGS_FOLDERS/$SCRIPT_NAME-$TIMESTAMP.log"
 
 mkdir -p $LOGS_FOLDER
 
@@ -14,14 +14,14 @@ USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
-Y= "\e[33m"
+Y="\e[33m"
 
 USAGE(){
     echo -e  "$R USAGE: sudo sh 16-redirectots.sh package1 package2"
     exit 1
 }
 
-if[ $# -eq 0 ]
+if [ $# -eq 0 ]
 then 
     USAGE
 fi
