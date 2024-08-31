@@ -3,13 +3,15 @@
 USERID=$(id -u)
 echo "User ID is : $USERID"
 
+G="\e[32m"
+
 VALIDATE(){
 
     if [ $1 -ne 0 ]
     then echo "$2 is ..... Failed"
          exit 1
     else
-        echo "$2 is .... succcess"
+        echo -e "$2 is .... $G succcess"
     fi         
 }
 
