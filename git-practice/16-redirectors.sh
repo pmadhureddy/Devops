@@ -1,10 +1,10 @@
 #!/bin/bash
 
 
-LOGS_FOLDER="/var/logs/shell-scripts"
+LOGS_FOLDER="/var/logs/shell-script"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 TIMESTSAMP=$(date +Y-%m-%d-%H-%M-%S)
-LOG_FILE="$LOGS_FOLDERS/$SCRIPT_NAME-$TIMESTAMP.log"
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME-$TIMESTAMP.log"
 
 mkdir -p $LOGS_FOLDER
 
@@ -48,7 +48,7 @@ fi
 #sh 15-loops.sh git mysql nginx
 for package in $@ # refers to all inputs
 do 
-   dnf list installed $package
+   dnf list installed $package &>>$LOG_FILE
 
     if [ $? -ne 0 ]
     then 
