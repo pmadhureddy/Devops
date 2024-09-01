@@ -13,6 +13,7 @@ Y="\e[33m"
 USAGE(){
 
     echo -e "$R USAGE:: $N sh 18-bachup.sh <source> <destination> <days(optional)>"
+    exit 1
 }
 
 # check the source  and destination are provided
@@ -34,7 +35,7 @@ fi
    
 FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +14)
 
-if [ -n $FILES ]
+if [ ! -z $FILES ] # -Z check whether files are empty are not, if empty  returns true
 then
    echo "Files are Found"
 else
