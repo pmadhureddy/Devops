@@ -47,6 +47,14 @@ then
    if [ -f $ZIP_FILE ]
    then
       echo "Successfully zipped files older than $DAYS"
+      while IFS= read -r file #IFS,internal field seperatpor, empty it will ignore while space.-r is for not to ingore special charecters like /
+      do
+        echo "Deleting file: $file"
+        rm -rf $file
+      done <<< $FILES
+    else 
+       echo "Failed in zipping the files..."
+       exit 1  
    fi   
 else
   echo "No files older than $DAYS"
